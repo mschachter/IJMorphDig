@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>How to use IJMorphDig</title>
+</head>
+<body>
+
+<h1>Building and Installing</h1>
+
+<h2>Clone or Download from Github</h2>
+At the command line, you can type:
+<pre>
+git clone https://github.com/mschachter/IJMorphDig.git
+</pre>
+Alternatively you can download a .zip file containing the source code if you click on the
+"Download ZIP" button from the <a href="https://github.com/mschachter/IJMorphDig">home page</a>.
+
+<h2>Build from Source</h2>
+First, make sure you have a recent version of the <a href="http://www.oracle.com/technetwork/java/javase/downloads">Java SDK</a> installed.
+
+Then, make sure you have a recent version of <a href="http://ant.apache.org/">Apache Ant</a> installed, with the <pre>ant</pre> script in your path.
+
+When you have satisfied these requirements, go to the IJMorphDig directory, and type "ant", as follows:
+
+<pre>
+cd IJMorphDig
+ant
+</pre>
+
+Some stuff should happen, and this should produce a file named <pre>Morph_Dig.jar</pre> in the <pre>IJMorphDig/build/jar</pre> directory. If
+you have build errors, please <a href="https://github.com/mschachter/IJMorphDig/issues">file a bug report</a>!
+
+
+<h2>Copy .jar File to ImageJ</h2>
+In order for the plugin to be used, copy Morph_Dig.jar to the ImageJ/plugins directory. You have now completed the steps to building and installing the plugin!
+
+<h1>Using the Plugin with ImageJ</h1>
+<ol>
+<li>Start ImageJ, and then open your image.
+<br /><br />
+</li>
+
+<li>Once the image is opened, select "Plugins->Run Morph Digitzer", underlined in red in the following screenshot:<br /><br />
+<img src="img/start_plugin.png">
+<br /><br />
+</li>
+
+<li>After the plugin is selected, the window will be rescaled, and text should appear that says "Click the center of the soma to create the first node".
+<br /><br />
+</li>
+
+<li>
+Navigate to the slice of your stack that contains the the soma's center. Click the center of the soma. A small dialog box will appear that lets you set the diameter and region name of the soma. The (X,Y,Z) location is automatically determined from the scale of the image specified in the .tiff file. Be sure to set the diameter of your soma, then click "Save". Here is a screenshot of what this looks like:<br /><br />
+<img src="img/create_soma.png">
+<br /><br />
+</li>
+
+<li>
+A yellow dot will indicate the position of the soma. Now you have to define the first primary dendrite! Click the yellow dot, and a blue line will appear between the yellow dot and the position of your mouse. Align your mouse to the position of the first primary dendrite, and click. A new dialog box will appear that allows you to define the diameter of the dendrite. Also change the region to "DEND", as shown in the screenshot:<br /><br />
+<img src="img/first_dendrite.png">
+<br /><br />
+</li>
+
+<li>
+ At this point, you can navigate through your stack by using the left and right arrow keys on your keyboard. To define further dendrites, click on a node - as before, a line will appear between the location of that node and your mouse location. Clicking again will create a connection between the two points, and allow you define the diameter and region.
+<br /><br />
+</li>
+
+<li>
+When you're done doing all that, you can save to a neuronc anatomy file by going to "File->Save As->NeuronC Morphology", as shown in the screenshot:
+<br /><br />
+<img src="img/save_as.png">
+<br /><br />
+</li>
+ 
+</ol>
+
+
+
+
+
+
+
+
+</body>
+</html>
